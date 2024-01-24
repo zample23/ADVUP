@@ -1,0 +1,92 @@
+//Fonts
+$font-main: "Proxima Nova";
+$font-second: "Playen Sans";
+$default-size: 16px;
+
+$grey: #a8a8a8;
+$white: #ffffff;
+$black: #000000;
+$pink: #ff3f62;
+$lightgrey: #e7e7e7;
+
+$container: 1340px;
+$containerSmall: 570px;
+
+//Media
+// $tablet: 992px;
+$tablet: 1124px;
+$phone: 767px;
+$mini: 546px;
+
+// Mixins
+@mixin mediaTablet {
+  @media screen and (max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin mediaPhone {
+  @media screen and (max-width: $phone) {
+    @content;
+  }
+}
+
+@mixin mediaMini {
+  @media screen and (max-width: $mini) {
+    @content;
+  }
+}
+
+// @font-face {
+//    font-family: 'Proxima Nova';
+//    src: url('ProximaNova-Regular.eot');
+//    src: local('Proxima Nova Regular'), local('ProximaNova-Regular'),
+//        url('ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
+//        url('ProximaNova-Regular.woff2') format('woff2'),
+//        url('ProximaNova-Regular.woff') format('woff'),
+//        url('ProximaNova-Regular.ttf') format('truetype');
+//    font-weight: normal;
+//    font-style: normal;
+// }
+
+// @font-face {
+//    font-family: 'Proxima Nova Semibold';
+//    src: url('ProximaNova-Semibold.eot');
+//    src: local('Proxima Nova Semibold'), local('ProximaNova-Semibold'),
+//        url('ProximaNova-Semibold.eot?#iefix') format('embedded-opentype'),
+//        url('ProximaNova-Semibold.woff2') format('woff2'),
+//        url('ProximaNova-Semibold.woff') format('woff'),
+//        url('ProximaNova-Semibold.ttf') format('truetype');
+//    font-weight: 600;
+//    font-style: normal;
+// }
+
+// @font-face {
+//    font-family: 'Proxima Nova Bold';
+//    src: url('ProximaNova-Bold.eot');
+//    src: local('Proxima Nova Bold'), local('ProximaNova-Bold'),
+//        url('ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
+//        url('ProximaNova-Bold.woff2') format('woff2'),
+//        url('ProximaNova-Bold.woff') format('woff'),
+//        url('ProximaNova-Bold.ttf') format('truetype');
+//    font-weight: bold;
+//    font-style: normal;
+// }
+
+// @font-face {
+//    font-family: 'Playen Sans Bold';
+//    src: url('PlayenSans-Bold.woff2') format('woff2'),
+//        url('PlayenSans-Bold.woff') format('woff');
+//    font-weight: bold;
+//    font-style: normal;
+//    font-display: swap;
+// }
+
+// @font-face {
+//    font-family: 'Playen Sans Medium';
+//    src: url('PlayenSans-Medium.woff2') format('woff2'),
+//        url('PlayenSans-Medium.woff') format('woff');
+//    font-weight: 500;
+//    font-style: normal;
+//    font-display: swap;
+// }

@@ -1,0 +1,179 @@
+@import "./../../vars.scss";
+
+.advantages {
+  padding: 100px 0;
+  background-color: $white;
+  @include mediaPhone {
+    padding: 50px 0;
+  }
+  &__title {
+    color: $black;
+    font-family: "Playen Sans Bold";
+    font-size: 42px;
+    line-height: 100%;
+    margin-bottom: 50px;
+    @include mediaPhone {
+      margin-bottom: 20px;
+      font-size: 35px;
+    }
+  }
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+    @media only screen and (max-width: 1339px) {
+      justify-content: center;
+    }
+    @include mediaPhone {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      width: 100%;
+    }
+  }
+}
+
+.advantage {
+  background-color: $black;
+
+  &__name {
+    color: $white;
+    font-family: "Playen Sans Medium";
+    font-size: 48px;
+    line-height: 100%;
+    @include mediaPhone {
+      width: 100%;
+      font-size: 30px;
+    }
+    @include mediaMini {
+      font-size: 25px;
+    }
+  }
+
+  &__text {
+    color: $grey;
+    font-size: 18px;
+    @include mediaPhone {
+      width: 100%;
+      font-size: 16px;
+    }
+    @include mediaMini {
+      font-size: 14px;
+    }
+  }
+}
+.advantage-one {
+  background: url("../../img/advantage_1.png");
+  background-size: cover;
+  // width: 600px;
+  height: 350px;
+  flex: 1 1 600px;
+  padding: 40px;
+  padding-top: 124px;
+  @media only screen and (max-width: 1339px) {
+    flex: 0 1 70%;
+  }
+  @include mediaPhone {
+    flex-basis: auto;
+    width: 100%;
+    padding: 20px;
+    padding-top: 62px;
+    height: auto;
+  }
+  & .advantage__name {
+    margin-bottom: 46px;
+    width: 490px;
+    @include mediaTablet {
+      margin-bottom: 30px;
+    }
+    @include mediaPhone {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  }
+}
+.advantage-two {
+  background: url("../../img/advantage_2.png");
+  background-size: cover;
+  // width: 680px;
+  height: 350px;
+  flex: 1 1 680px;
+  padding: 40px;
+  padding-top: 124px;
+  @media only screen and (max-width: 1339px) {
+    flex: 0 1 70%;
+  }
+  @include mediaPhone {
+    flex-basis: auto;
+    width: 100%;
+    padding: 20px;
+    padding-top: 62px;
+
+    height: auto;
+  }
+  & .advantage__name {
+    margin-bottom: 46px;
+    width: 490px;
+    @include mediaTablet {
+      margin-bottom: 30px;
+    }
+    @include mediaPhone {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  }
+}
+.advantage-three {
+  background: url("../../img/advantage_3.png");
+  background-size: cover;
+  // width: 520px;
+  height: 262px;
+  flex: 1 1 520px;
+  padding: 107px 20px;
+  @media only screen and (max-width: 1339px) {
+    flex: 0 1 70%;
+  }
+  @include mediaPhone {
+    height: auto;
+    flex-basis: auto;
+    width: 100%;
+    padding: 54px 10px;
+  }
+  & .advantage__name {
+    text-align: center;
+  }
+}
+.advantage-four {
+  background: url("../../img/advantage_4.png");
+  background-size: cover;
+  // width: 760px;
+  height: 262px;
+  flex: 1 1 100px;
+  padding: 60px 82px 60px 40px;
+
+  @media only screen and (max-width: 1339px) {
+    flex: 0 1 70%;
+  }
+  @include mediaPhone {
+    height: auto;
+    flex-basis: auto;
+    width: 100%;
+    padding: 30px 41px 30px 20px;
+  }
+  & .advantage__name {
+    margin-bottom: 28px;
+    @include mediaTablet {
+      margin-bottom: 10px;
+    }
+    @include mediaPhone {
+      margin-bottom: 15px;
+    }
+  }
+  & .advantage__text {
+    width: 478px;
+    @include mediaPhone {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,141 @@
+@import "./../../vars.scss";
+
+.content {
+  .container {
+    @include mediaMini {
+      padding: 0;
+    }
+  }
+  &__grid {
+    padding-top: 100px;
+    @include mediaTablet {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    @include mediaPhone {
+      padding-top: 20px;
+      padding-bottom: 40px;
+    }
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: minmax(auto, 753px) auto;
+    grid-template-rows: minmax(auto, 1 fr) minmax(auto, 1 fr);
+    row-gap: 10px;
+    column-gap: 15px;
+    margin-bottom: 100px;
+    @include mediaTablet {
+      margin-bottom: 70px;
+    }
+    @include mediaMini {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__row-1 {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 545px;
+      height: 124px;
+      right: 3px;
+      top: 62px;
+      background: url("../../img/rectangle.svg") no-repeat;
+      z-index: -1;
+      @include mediaTablet {
+        transform: scale(0.7) translate(20px, -10px);
+      }
+      @include mediaPhone {
+        transform: scale(0.5) translate(130px, -30px);
+      }
+      @include mediaMini {
+        display: none;
+      }
+    }
+  }
+  &__row-2 {
+    margin-bottom: 50px;
+    @include mediaTablet {
+      margin-bottom: 30px;
+    }
+    @include mediaPhone {
+      margin-bottom: 20px;
+    }
+    @include mediaMini {
+      margin-bottom: 0;
+    }
+  }
+  &__image {
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__add {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    font-size: 18px;
+    color: $grey;
+    @include mediaTablet {
+      font-size: 16px;
+    }
+    @include mediaMini {
+      font-size: 14px;
+      padding: 0 10px;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    color: $black;
+    font-family: $font-second;
+    font-size: 82px;
+    font-weight: 500;
+    line-height: 100%;
+    @include mediaTablet {
+      font-size: 62px;
+    }
+    @include mediaPhone {
+      font-size: 50px;
+    }
+    @include mediaMini {
+      font-size: 35px;
+      padding: 0 10px;
+      text-align: center;
+    }
+  }
+
+  &__button {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    justify-self: end;
+    align-self: flex-start;
+    margin-top: 30px;
+    @include mediaMini {
+      grid-row: 3/4;
+      grid-column: 1/-1;
+      width: 100%;
+      border-radius: 0;
+      margin-top: 20px;
+      padding: 15px;
+    }
+  }
+  &__button {
+    &:hover {
+      background-color: $white;
+      color: $black;
+    }
+    &:active {
+      background-color: rgb(240, 238, 238);
+    }
+  }
+}

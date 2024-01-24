@@ -1,0 +1,150 @@
+@import url("./fonts/ProximaNova/stylesheet.css");
+@import url("./fonts/PlayenSans/stylesheet.css");
+body {
+  font-family: "Proxima Nova";
+  font-size: 16px;
+  background-color: #ffffff;
+  color: #a8a8a8;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.no-scroll {
+  overflow-y: hidden;
+}
+
+.container {
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.container-small {
+  max-width: 570px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.button {
+  display: inline-flex;
+  padding: 10px 15px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 30px;
+  background-color: #000000;
+  border: 1px solid #000000;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  transition: background-color 0.2s ease-in, color 0.2s ease-in;
+}
+
+.button:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.button:active {
+  background-color: rgba(34, 34, 34, 0.8470588235);
+}
+
+.text {
+  color: #a8a8a8;
+  font-family: "Proxima Nova";
+  font-size: 18px;
+}
+
+@media only screen and (min-width: 1125px) {
+  .swiper-wrapper {
+    display: block !important;
+  }
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: #ff3f62;
+  transform: translateY(50px) scale(0.6);
+}
+@media screen and (max-width: 767px) {
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    transform: translateY(10px) scale(0.5);
+  }
+}
+@media screen and (max-width: 546px) {
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    transform: translateY(-10px) scale(0.3);
+  }
+}
+
+.advertisement {
+  height: 118px;
+  width: 100%;
+  background-color: #ff3f62;
+  margin-bottom: 100px;
+}
+
+/* Nav Icon */
+.nav-icon-btn {
+  --time: 0.1s;
+  --width: 40px;
+  --height: 30px;
+  --line-height: 1px;
+  --line-margin: 2;
+  --color: #000;
+  height: var(--height);
+  width: var(--width);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-icon {
+  position: relative;
+  width: var(--width);
+  height: var(--line-height);
+  background-color: var(--color);
+  z-index: 2;
+}
+
+.nav-icon::before,
+.nav-icon::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  width: var(--width);
+  height: var(--line-height);
+  background-color: var(--color);
+  transition: transform var(--time) ease-in, top var(--time) linear var(--time);
+}
+
+.nav-icon::before {
+  top: calc(var(--line-height) * -9);
+}
+
+.nav-icon::after {
+  top: calc(var(--line-height) * 9);
+}
+
+.nav-icon.nav-icon--active {
+  background-color: transparent;
+}
+
+.nav-icon.nav-icon--active::before,
+.nav-icon.nav-icon--active::after {
+  top: 0;
+  transition: top var(--time) linear, transform var(--time) ease-in var(--time);
+}
+
+.nav-icon.nav-icon--active::before {
+  transform: rotate(45deg);
+}
+
+.nav-icon.nav-icon--active::after {
+  transform: rotate(-45deg);
+}

@@ -1,0 +1,134 @@
+@import "./../../vars.scss";
+
+.header {
+  // width: 100%;
+  border-bottom: 1px solid $lightgrey;
+  &__grid {
+    padding: 20px 0;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  &__grid-tablet {
+    position: fixed;
+    background-color: $lightgrey;
+    padding: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .header__nav {
+      display: block;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 30px;
+        .header__nav-link {
+          color: $black;
+          &:hover {
+            color: $pink;
+          }
+        }
+        .header__nav-item {
+          font-size: 40px;
+          @include mediaPhone {
+            font-size: 35px;
+          }
+          @include mediaMini {
+            font-size: 30px;
+          }
+        }
+      }
+    }
+    .header__button {
+      display: block;
+      margin: 0;
+      font-size: 20px;
+      border: 0;
+      border-radius: 0;
+      width: 100%;
+      padding: 25px;
+      background-color: $black;
+      color: $white;
+      transition: opacity 0.2s ease-in;
+      text-align: center;
+      @include mediaPhone {
+        font-size: 18px;
+      }
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+    .header__media-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 20px;
+    }
+    .header__logo {
+      padding-top: 50px;
+      padding-bottom: 40px;
+    }
+  }
+
+  &__logo {
+    width: 103px;
+    height: 32px;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__nav {
+    ul {
+      display: flex;
+      column-gap: 30px;
+    }
+    @include mediaTablet {
+      display: none;
+    }
+  }
+
+  &__nav-item {
+    :hover {
+      transition: color 0.3s ease-in-out;
+      color: $pink;
+    }
+    :active {
+      color: $black;
+    }
+  }
+
+  &__nav-link {
+    color: $grey;
+  }
+
+  &__button {
+    margin-left: auto;
+    background-color: $white;
+    color: $black;
+    border-radius: 20px;
+    @include mediaTablet {
+      display: none;
+    }
+  }
+  &__media-btn {
+    display: none;
+    margin-left: auto;
+    @include mediaTablet {
+      display: block;
+    }
+  }
+}

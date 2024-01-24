@@ -1,0 +1,218 @@
+.advantages {
+  padding: 100px 0;
+  background-color: #ffffff;
+}
+@media screen and (max-width: 767px) {
+  .advantages {
+    padding: 50px 0;
+  }
+}
+.advantages__title {
+  color: #000000;
+  font-family: "Playen Sans Bold";
+  font-size: 42px;
+  line-height: 100%;
+  margin-bottom: 50px;
+}
+@media screen and (max-width: 767px) {
+  .advantages__title {
+    margin-bottom: 20px;
+    font-size: 35px;
+  }
+}
+.advantages__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-start;
+}
+@media only screen and (max-width: 1339px) {
+  .advantages__grid {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 767px) {
+  .advantages__grid {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+}
+
+.advantage {
+  background-color: #000000;
+}
+.advantage__name {
+  color: #ffffff;
+  font-family: "Playen Sans Medium";
+  font-size: 48px;
+  line-height: 100%;
+}
+@media screen and (max-width: 767px) {
+  .advantage__name {
+    width: 100%;
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 546px) {
+  .advantage__name {
+    font-size: 25px;
+  }
+}
+.advantage__text {
+  color: #a8a8a8;
+  font-size: 18px;
+}
+@media screen and (max-width: 767px) {
+  .advantage__text {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 546px) {
+  .advantage__text {
+    font-size: 14px;
+  }
+}
+
+.advantage-one {
+  background: url("../../img/advantage_1.png");
+  background-size: cover;
+  height: 350px;
+  flex: 1 1 600px;
+  padding: 40px;
+  padding-top: 124px;
+}
+@media only screen and (max-width: 1339px) {
+  .advantage-one {
+    flex: 0 1 70%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .advantage-one {
+    flex-basis: auto;
+    width: 100%;
+    padding: 20px;
+    padding-top: 62px;
+    height: auto;
+  }
+}
+.advantage-one .advantage__name {
+  margin-bottom: 46px;
+  width: 490px;
+}
+@media screen and (max-width: 1124px) {
+  .advantage-one .advantage__name {
+    margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .advantage-one .advantage__name {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+
+.advantage-two {
+  background: url("../../img/advantage_2.png");
+  background-size: cover;
+  height: 350px;
+  flex: 1 1 680px;
+  padding: 40px;
+  padding-top: 124px;
+}
+@media only screen and (max-width: 1339px) {
+  .advantage-two {
+    flex: 0 1 70%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .advantage-two {
+    flex-basis: auto;
+    width: 100%;
+    padding: 20px;
+    padding-top: 62px;
+    height: auto;
+  }
+}
+.advantage-two .advantage__name {
+  margin-bottom: 46px;
+  width: 490px;
+}
+@media screen and (max-width: 1124px) {
+  .advantage-two .advantage__name {
+    margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .advantage-two .advantage__name {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+
+.advantage-three {
+  background: url("../../img/advantage_3.png");
+  background-size: cover;
+  height: 262px;
+  flex: 1 1 520px;
+  padding: 107px 20px;
+}
+@media only screen and (max-width: 1339px) {
+  .advantage-three {
+    flex: 0 1 70%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .advantage-three {
+    height: auto;
+    flex-basis: auto;
+    width: 100%;
+    padding: 54px 10px;
+  }
+}
+.advantage-three .advantage__name {
+  text-align: center;
+}
+
+.advantage-four {
+  background: url("../../img/advantage_4.png");
+  background-size: cover;
+  height: 262px;
+  flex: 1 1 100px;
+  padding: 60px 82px 60px 40px;
+}
+@media only screen and (max-width: 1339px) {
+  .advantage-four {
+    flex: 0 1 70%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .advantage-four {
+    height: auto;
+    flex-basis: auto;
+    width: 100%;
+    padding: 30px 41px 30px 20px;
+  }
+}
+.advantage-four .advantage__name {
+  margin-bottom: 28px;
+}
+@media screen and (max-width: 1124px) {
+  .advantage-four .advantage__name {
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .advantage-four .advantage__name {
+    margin-bottom: 15px;
+  }
+}
+.advantage-four .advantage__text {
+  width: 478px;
+}
+@media screen and (max-width: 767px) {
+  .advantage-four .advantage__text {
+    width: 100%;
+  }
+}

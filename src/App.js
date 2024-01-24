@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./reset.css";
+import "./base.scss";
+import "./vars.scss";
+import Header from "./components/header/Header";
+import Content from "./components/content/Content";
+import Projects from "./components/projects/Projects";
+import Advantages from "./components/advantages/Advantages";
+import Form from "./components/form/Form";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <main>
+        <Content />
+        <Projects />
+        <Advantages />
+        <Form />
+      </main>
+      <Footer />
+      <script src="js/main.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     </div>
   );
 }

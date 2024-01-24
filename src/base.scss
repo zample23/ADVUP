@@ -1,0 +1,217 @@
+@import url("./fonts/ProximaNova/stylesheet.css");
+@import url("./fonts/PlayenSans/stylesheet.css");
+@import "./vars.scss";
+
+body {
+  font-family: $font-main;
+  font-size: $default-size;
+  background-color: $white;
+  color: $grey;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.no-scroll {
+  overflow-y: hidden;
+}
+
+.container {
+  max-width: $container;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.container-small {
+  max-width: $containerSmall;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.button {
+  display: inline-flex;
+  padding: 10px 15px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 30px;
+  background-color: $black;
+  border: 1px solid $black;
+  color: $white;
+  font-size: 18px;
+  font-weight: 600;
+  transition: background-color 0.2s ease-in, color 0.2s ease-in;
+}
+
+.button:hover {
+  background-color: $black;
+  color: $white;
+}
+
+.button:active {
+  background-color: #222222d8;
+}
+
+.text {
+  color: $grey;
+  font-family: $font-main;
+  font-size: 18px;
+}
+
+.swiper-wrapper {
+  @media only screen and (min-width: 1125px) {
+    display: block !important;
+  }
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: $pink;
+  transform: translateY(50px) scale(0.6);
+  @include mediaPhone {
+    transform: translateY(10px) scale(0.5);
+  }
+  @include mediaMini {
+    transform: translateY(-10px) scale(0.3);
+  }
+}
+
+// .advertisement-wrapper {
+//    width: 100%;
+//    background-color: $pink;
+//    height: 118px;
+// }
+
+.advertisement {
+  height: 118px;
+  width: 100%;
+  background-color: $pink;
+  // transform: rotate(-1.5deg);
+  margin-bottom: 100px;
+  // background-image: ;
+  // background-image: url('../img/sponsors.png');
+  // background-repeat: no-repeat;
+  // img {
+  //    object-fit: fill;
+  //    @include mediaMini {
+  //    transform: scale(1.2);
+  //    }
+  // }
+  // &::before {
+  //    content: "";
+  //    display: block;
+  //    width: 0px;
+  //    height: 100px;
+  //    position: absolute;
+  //    left: 0px;
+  //    bottom: 0px;
+  //    background-color: url('../img') $pink;
+  //    // overflow-x: hidden;
+
+  // }
+  // &::after {
+  //    content: "";
+  //    display: block;
+  //    width: 0px;
+  //    height: 100px;
+  //    position: absolute;
+  //    right: 0px;
+  //    top: 0px;
+  //    background-color: $black;
+  //    // overflow-x: hidden;
+  // }
+}
+
+/* Nav Icon */
+.nav-icon-btn {
+  --time: 0.1s;
+  --width: 40px;
+  --height: 30px;
+  --line-height: 1px;
+  --line-margin: 2;
+  --color: #000;
+
+  height: var(--height);
+  width: var(--width);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-icon {
+  position: relative;
+  width: var(--width);
+  height: var(--line-height);
+  background-color: var(--color);
+  z-index: 2;
+}
+
+.nav-icon::before,
+.nav-icon::after {
+  content: "";
+  display: block;
+
+  position: absolute;
+  left: 0;
+
+  width: var(--width);
+  height: var(--line-height);
+
+  background-color: var(--color);
+  transition: transform var(--time) ease-in, top var(--time) linear var(--time);
+}
+
+.nav-icon::before {
+  top: calc(var(--line-height) * -9);
+}
+
+.nav-icon::after {
+  top: calc(var(--line-height) * 9);
+}
+
+.nav-icon.nav-icon--active {
+  background-color: transparent;
+}
+
+.nav-icon.nav-icon--active::before,
+.nav-icon.nav-icon--active::after {
+  top: 0;
+  transition: top var(--time) linear, transform var(--time) ease-in var(--time);
+}
+
+.nav-icon.nav-icon--active::before {
+  transform: rotate(45deg);
+}
+
+.nav-icon.nav-icon--active::after {
+  transform: rotate(-45deg);
+}
+
+// .nav-popup {
+//    position: absolute;
+//    width: 100%;
+//    height: 100%;
+//    background-color: rgba($white, 0.9);
+//    ul {
+//       display: flex;
+//       flex-direction: column;
+//       // row-gap: 40px;
+// align-items: center;
+// justify-content: space-between;
+//    }
+//    &__item {
+//       font-size: 30px;
+//       :hover {
+//          transition: color 0.3s ease-in-out;
+//          color: $pink;
+//       }
+//       :active {
+//          color: $black;
+//       }
+//    }
+
+//    &__link {
+//       color: $grey;
+//    }
+// }
