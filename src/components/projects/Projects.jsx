@@ -1,52 +1,64 @@
-import Swiper from "swiper/bundle";
-import "swiper/css/bundle";
-
+// import Swiper from "swiper/bundle";
+// import "swiper/css/bundle";
+// import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { useState } from "react";
 import "./projects.scss";
-import mainImage1 from "./../../img/projects_main_image.png";
+import projects from "../../data/projects-info";
+import Button from "../button/Button";
+// import mainImage1 from "./../../img/projects_main_image.png";
 import mainImage2 from "./../../img/projects_main_image_2.jpg";
 import mainImage3 from "./../../img/projects_main_image_3.jpg";
 import mainImage4 from "./../../img/projects_main_image_4.png";
-import project1 from "./../../img/project_1.png";
-import project2 from "./../../img/project_2.png";
-import project3 from "./../../img/project_3.png";
-import project4 from "./../../img/project_4.png";
 import iconFire from "./../../img/icon_fire.png";
 
-const swiper = new Swiper(".my-swiper", {
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  breakpoints: {
-    1125: {
-      enabled: false,
-    },
-  },
-
-  spaceBetween: 100,
-
-  keyboard: {
-    enabled: true,
-    onlyInViewport: false,
-  },
-});
-
-const projects = document.querySelectorAll(".project-main");
-const stats = document.querySelectorAll(".project-stats");
-
-projects.forEach(function (item) {
-  if (swiper.enabled && !item.closest(".first-project")) {
-    item.classList.toggle("hidden");
-  }
-});
-
-stats.forEach(function (item) {
-  if (swiper.enabled && !item.closest(".first-project")) {
-    item.classList.toggle("hidden");
-  }
-});
-
 const Projects = () => {
+  function handleResize() {
+    const screenWidth = window.innerWidth;
+    const breakpoint = 1125;
+
+    const allProjects = document.querySelectorAll(".projects__wrapper.rest");
+
+    allProjects.forEach((element) => {
+      if (screenWidth > breakpoint) {
+        element.classList.add("hidden");
+      } else {
+        element.classList.remove("hidden");
+      }
+    });
+  }
+
+  handleResize();
+
+  window.addEventListener("resize", handleResize);
+
+  const [data, setData] = useState({
+    id: 1,
+    image: "projects_main_image.png",
+    tags: [
+      {
+        id: 1,
+        tag: "icon_fire.png",
+      },
+      {
+        id: 2,
+        tag: "Ігри",
+      },
+      {
+        id: 3,
+        tag: "Frogwares",
+      },
+    ],
+    title: "The Sinking City",
+    desc: "The Sinking City — це детективна гра з відкритим світом з видом від третьої особи. Вона має відкриту систему розслідування, в якій результат виконання квестів гравцем часто визначається тим, наскільки він спостережливий при дослідженні різних доказів і на скільки логічно поєднує їх.",
+    stats: {
+      views: "20.000+",
+      likes: "12.341",
+      coverage: "19.801",
+    },
+    link: "https://store.steampowered.com/app/750130/The_Sinking_City/",
+  });
   return (
     <section className="projects">
       <div className="container">
@@ -54,7 +66,7 @@ const Projects = () => {
           Наші кейси
         </h2>
         <div className="projects__grid">
-          <div className="swiper my-swiper">
+          {/* <div className="swiper my-swiper">
             <div className="swiper-wrapper">
               <div className="swiper-slide">
                 <div className="projects__wrapper">
@@ -252,7 +264,6 @@ const Projects = () => {
             <div className="swiper-button-next"></div>
             <div className="swiper-button-prev"></div>
           </div>
-
           <div className="projects-cards">
             <a
               href="#main"
@@ -321,6 +332,249 @@ const Projects = () => {
                 <img src={project4} alt="Project 4" />
               </div>
             </a>
+          </div> */}
+
+          <Swiper
+            spaceBetween={100}
+            onSlideChange={() => console.log("slide change")}
+            onSwiper={(swiper) => console.log(swiper)}
+          >
+            <SwiperSlide>
+              <div className="projects__wrapper">
+                <div
+                  className="project-main"
+                  // id="mainOne"
+                >
+                  <div className="project-main__image">
+                    <img
+                      src={require(`./../../img/${data.image}`)}
+                      alt="Main"
+                    />
+                  </div>
+                  <ul className="project-main__tags">
+                    {/* <li className="project-main__tag">
+                  <img src={iconFire} alt="Fire" />
+                </li>
+                <li className="project-main__tag">Ігри</li>
+                <li className="project-main__tag">Frogwares</li> */}
+                    {data.tags.map((tag) => {
+                      return (
+                        <li className="project-main__tag" key={tag.id}>
+                          {tag.tag === "icon_fire.png" ? (
+                            <img src={iconFire} alt="Fire" />
+                          ) : (
+                            tag.tag
+                          )}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                  <h2 className="project-main__name">{data.title}</h2>
+                  <p className="project-main__description">{data.desc}</p>
+                  {/* <button className="project-main__button button">
+                Детальніше
+              </button> */}
+                  <Button href={data.link} />
+                </div>
+                <div className="project-stats first-project" id="statOne">
+                  <div className="project-stats__stat">
+                    <h3 className="project-stats__name">
+                      Кількість переглядів
+                    </h3>
+                    <span className="project-stats__number">
+                      {data.stats.coverage}
+                    </span>
+                  </div>
+
+                  <div className="project-stats__stat">
+                    <h3 className="project-stats__name">Лайків</h3>
+                    <span className="project-stats__number">
+                      {data.stats.likes}
+                    </span>
+                  </div>
+
+                  <div className="project-stats__stat">
+                    <h3 className="project-stats__name">Охоплення</h3>
+                    <span className="project-stats__number">
+                      {data.stats.views}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div className="projects__wrapper rest hidden">
+                <div className="project-main" id="mainTwo">
+                  <div className="project-main__image">
+                    <img src={mainImage2} alt="Казино Stake x Drake" />
+                  </div>
+                  <ul className="project-main__tags">
+                    <li className="project-main__tag">Азарт</li>
+                    <li className="project-main__tag">Реп</li>
+                    <li className="project-main__tag">Реклама</li>
+                  </ul>
+                  <h2 className="project-main__name">Stake x Drake</h2>
+                  <p className="project-main__description">
+                    Різноманітний та багатий досвід консультації з
+                    професіоналами з IT відіграє важливу роль у формуванні
+                    всебічно збалансованих нововведень. Значимість цих проблем
+                    настільки очевидна, що нова модель є організаційною.
+                  </p>
+                  <button className="project-main__button button">
+                    Детальніше
+                  </button>
+                </div>
+                <div className="project-stats" id="statTwo">
+                  <div className="project-stats__stat">
+                    <h3 className="project-stats__name">
+                      Кількість переглядів
+                    </h3>
+                    <span className="project-stats__number">15.345</span>
+                  </div>
+
+                  <div className="project-stats__stat">
+                    <h3 className="project-stats__name">Лайків</h3>
+                    <span className="project-stats__number">9.781</span>
+                  </div>
+
+                  <div className="project-stats__stat">
+                    <h3 className="project-stats__name">Охоплення</h3>
+                    <span className="project-stats__number">18.920</span>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div className="projects__wrapper rest hidden">
+                <div className="project-main" id="mainThree">
+                  <div className="project-main__image">
+                    <img src={mainImage3} alt="Игровой проект Free Fire" />
+                  </div>
+                  <ul className="project-main__tags">
+                    <li className="project-main__tag">Кіберспорт</li>
+                    <li className="project-main__tag">Трансляції</li>
+                  </ul>
+                  <h2 className="project-main__name">Maincast</h2>
+                  <p className="project-main__description">
+                    Різноманітний та багатий досвід консультації з
+                    професіоналами з IT відіграє важливу роль у формуванні
+                    всебічно збалансованих нововведень. Значимість цих проблем
+                    настільки очевидна, що нова модель є організаційною.
+                  </p>
+                  <button className="project-main__button button">
+                    Детальніше
+                  </button>
+                </div>
+                <div className="project-stats" id="statThree">
+                  <div className="project-stats__stat">
+                    <h3 className="project-stats__name">
+                      Кількість переглядів
+                    </h3>
+                    <span className="project-stats__number">17.989</span>
+                  </div>
+
+                  <div className="project-stats__stat">
+                    <h3 className="project-stats__name">Лайків</h3>
+                    <span className="project-stats__number">11.203</span>
+                  </div>
+
+                  <div className="project-stats__stat">
+                    <h3 className="project-stats__name">Охоплення</h3>
+                    <span className="project-stats__number">16.546</span>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div className="projects__wrapper rest hidden">
+                <div className="project-main" id="mainFour">
+                  <div className="project-main__image">
+                    <img src={mainImage4} alt="MainImage" />
+                  </div>
+                  <ul className="project-main__tags">
+                    <li className="project-main__tag">Ігровий бренд</li>
+                    <li className="project-main__tag">True gaming</li>
+                  </ul>
+                  <h2 className="project-main__name">MSI True Gaming</h2>
+                  <p className="project-main__description">
+                    Різноманітний та багатий досвід консультації з
+                    професіоналами з IT відіграє важливу роль у формуванні
+                    всебічно збалансованих нововведень. Значимість цих проблем
+                    настільки очевидна, що нова модель є організаційною.
+                  </p>
+                  <button className="project-main__button button">
+                    Детальніше
+                  </button>
+                </div>
+                <div className="project-stats" id="statFour">
+                  <div className="project-stats__stat">
+                    <h3 className="project-stats__name">
+                      Кількість переглядів
+                    </h3>
+                    <span className="project-stats__number">7.402</span>
+                  </div>
+
+                  <div className="project-stats__stat">
+                    <h3 className="project-stats__name">Лайків</h3>
+                    <span className="project-stats__number">2.100</span>
+                  </div>
+
+                  <div className="project-stats__stat">
+                    <h3 className="project-stats__name">Охоплення</h3>
+                    <span className="project-stats__number">11.213</span>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+
+            {/* <div className="swiper-button-next"></div>
+            <div className="swiper-button-prev"></div> */}
+          </Swiper>
+
+          <div className="projects-cards">
+            {projects.map((project) => {
+              return (
+                <a
+                  href="#main"
+                  className="project-card"
+                  data-main="mainOne"
+                  data-stat="statOne"
+                  key={project.id}
+                  onClick={() => {
+                    setData({
+                      ...data,
+                      id: project.id,
+                      image: project.image,
+                      tags: project.tags,
+                      title: project.title,
+                      desc: project.desc,
+                      stats: project.stats,
+                      link: project.link,
+                    });
+                  }}
+                >
+                  <div className="project-card__head">
+                    <h4 className="project-card__name">{project.title}</h4>
+                    <div className="project-card__description">
+                      {project.cardDesc}
+                    </div>
+                  </div>
+                  <div className="project-card__image">
+                    {/* <img
+                      src={`./../../img/${project.cardImage}`}
+                      alt="Project 1"
+                    /> */}
+                    <img
+                      src={require(`./../../img/${project.cardImage}`)}
+                      alt={`Project ${project.id}`}
+                    />
+                  </div>
+                </a>
+              );
+            })}
           </div>
         </div>
       </div>

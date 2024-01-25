@@ -40,6 +40,11 @@
     row-gap: 0;
   }
 }
+@media (min-width: 1125px) {
+  .projects__wrapper.rest {
+    display: none !important;
+  }
+}
 .projects__title {
   font-family: "Playen Sans Bold";
   font-size: 42px;
