@@ -1,12 +1,13 @@
-// import Swiper from "swiper/bundle";
-// import "swiper/css/bundle";
-// import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+// import { Navigation } from "swiper/modules";
+import "swiper/swiper-bundle.css";
+
 import { useState } from "react";
-import "./projects.scss";
+
 import projects from "../../data/projects-info";
 import Button from "../button/Button";
+import "./projects.scss";
+
 // import mainImage1 from "./../../img/projects_main_image.png";
 import mainImage2 from "./../../img/projects_main_image_2.jpg";
 import mainImage3 from "./../../img/projects_main_image_3.jpg";
@@ -336,8 +337,8 @@ const Projects = () => {
 
           <Swiper
             spaceBetween={100}
-            onSlideChange={() => console.log("slide change")}
-            onSwiper={(swiper) => console.log(swiper)}
+            // onSlideChange={() => console.log("slide change")}
+            onSwiper={(swiper) => console.log(1)}
           >
             <SwiperSlide>
               <div className="projects__wrapper">
@@ -529,9 +530,6 @@ const Projects = () => {
                 </div>
               </div>
             </SwiperSlide>
-
-            {/* <div className="swiper-button-next"></div>
-            <div className="swiper-button-prev"></div> */}
           </Swiper>
 
           <div className="projects-cards">
