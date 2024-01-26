@@ -1,4 +1,3 @@
-import "swiper/swiper-bundle.css";
 import "./card.scss";
 
 const Card = ({ project }) => {

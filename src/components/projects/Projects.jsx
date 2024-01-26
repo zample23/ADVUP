@@ -1,8 +1,13 @@
-import React from "react";
-
+import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 
-import "swiper/swiper-bundle.css";
+// import "swiper/swiper-bundle.css";
+
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
 
 import projects from "../../data/projects-info";
 import Card from "../card/Card";
@@ -12,6 +17,7 @@ import "./projects.scss";
 import iconFire from "./../../img/icon_fire.png";
 
 const Projects = () => {
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
   return (
     <section className="projects">
       <div className="container">
@@ -19,7 +25,12 @@ const Projects = () => {
           Наші кейси
         </h2>
         <div className="projects__grid">
-          <Swiper spaceBetween={100}>
+          <Swiper
+            spaceBetween={100}
+            navigation={true}
+            thumbs={{ swiper: thumbsSwiper }}
+            modules={[FreeMode, Navigation, Thumbs]}
+          >
             {projects.map((project) => {
               return (
                 <SwiperSlide key={project.id}>
@@ -82,9 +93,19 @@ const Projects = () => {
           </Swiper>
 
           <div className="projects-cards">
-            {projects.map((project) => {
-              return <Card project={project} key={project.id} />;
-            })}
+            <Swiper
+              onSwiper={setThumbsSwiper}
+              slidesPerView={4}
+              spaceBetween={10}
+            >
+              {projects.map((project) => {
+                return (
+                  <SwiperSlide>
+                    <Card project={project} key={project.id} />
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
           </div>
         </div>
       </div>

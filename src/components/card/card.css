@@ -73,7 +73,7 @@
   height: 100px;
   position: absolute;
   left: 50%;
-  top: -10px;
+  top: -8px;
   background: url("./../../img/trinagle_pink.svg") no-repeat;
   transform-origin: left;
   transform: translateX(-19px);

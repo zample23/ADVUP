@@ -7,6 +7,7 @@ body {
   font-size: $default-size;
   background-color: $white;
   color: $grey;
+  overflow-x: hidden;
 }
 
 .no-scroll {
@@ -57,8 +58,11 @@ body {
 
 .swiper-button-prev::after,
 .swiper-button-next::after {
+  padding: 20px;
   z-index: 10;
   color: $pink;
+  transition: color 0.1s ease-in, transform 0.1s ease-in;
+
   transform: translateY(50px) scale(0.6);
   @include mediaPhone {
     transform: translateY(10px) scale(0.5);
@@ -66,6 +70,12 @@ body {
   @include mediaMini {
     transform: translateY(-10px) scale(0.3);
   }
+}
+
+.swiper-button-prev:hover::after,
+.swiper-button-next:hover::after {
+  color: $grey;
+  transform: translateY(50px) scale(0.7);
 }
 
 // .advertisement-wrapper {
