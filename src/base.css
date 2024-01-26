@@ -7,10 +7,6 @@ body {
   color: #a8a8a8;
 }
 
-.hidden {
-  display: none !important;
-}
-
 .no-scroll {
   overflow-y: hidden;
 }
@@ -55,12 +51,6 @@ body {
   color: #a8a8a8;
   font-family: "Proxima Nova";
   font-size: 18px;
-}
-
-@media only screen and (min-width: 1125px) {
-  .swiper-wrapper {
-    display: block !important;
-  }
 }
 
 .swiper-button-prev::after,

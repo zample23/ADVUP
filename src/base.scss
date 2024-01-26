@@ -9,10 +9,6 @@ body {
   color: $grey;
 }
 
-.hidden {
-  display: none !important;
-}
-
 .no-scroll {
   overflow-y: hidden;
 }
@@ -57,12 +53,6 @@ body {
   color: $grey;
   font-family: $font-main;
   font-size: 18px;
-}
-
-.swiper-wrapper {
-  @media only screen and (min-width: 1125px) {
-    display: block !important;
-  }
 }
 
 .swiper-button-prev::after,

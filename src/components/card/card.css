@@ -1,0 +1,80 @@
+.project-card {
+  transition: transform 0.2s ease-in;
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+  width: 25%;
+}
+.project-card__head {
+  color: #ffffff;
+  padding: 30px;
+  border: 1px solid #404040;
+  border-bottom: none;
+  transition: background-color 0.2s ease-in;
+  height: 120px;
+}
+@media screen and (max-width: 1388px) {
+  .project-card__head {
+    padding: 15px;
+    padding-top: 25px;
+  }
+}
+@media screen and (max-width: 1268px) {
+  .project-card__head {
+    padding: 10px;
+    padding-top: 15px;
+  }
+}
+.project-card__name {
+  font-size: 18px;
+  font-family: "Proxima Nova Bold";
+  line-height: 1.2;
+  margin-bottom: 5px;
+}
+.project-card__description {
+  font-size: 14px;
+  line-height: 150%;
+  color: #a8a8a8;
+  transition: color 0.2s ease-in;
+}
+.project-card__image {
+  height: 203px;
+}
+.project-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.project-card:hover .project-card__head {
+  background-color: #ff3f62;
+}
+.project-card:hover .project-card__description {
+  color: #ffffff;
+}
+.project-card:hover {
+  transform: scale(1.05);
+}
+.project-card:hover::before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: 50%;
+  top: -20px;
+  background-color: #000000;
+  transform-origin: top left;
+  transform: rotate(45deg);
+}
+.project-card:hover::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  top: -10px;
+  background: url("./../../img/trinagle_pink.svg") no-repeat;
+  transform-origin: left;
+  transform: translateX(-19px);
+}
