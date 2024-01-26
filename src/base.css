@@ -58,7 +58,7 @@ body {
 .swiper-button-next::after {
   padding: 20px;
   z-index: 10;
-  color: #ff3f62;
+  color: #a8a8a8;
   transition: color 0.1s ease-in, transform 0.1s ease-in;
   transform: translateY(50px) scale(0.6);
 }
@@ -77,8 +77,20 @@ body {
 
 .swiper-button-prev:hover::after,
 .swiper-button-next:hover::after {
-  color: #a8a8a8;
+  color: #ff3f62;
   transform: translateY(50px) scale(0.7);
+}
+@media screen and (max-width: 767px) {
+  .swiper-button-prev:hover::after,
+  .swiper-button-next:hover::after {
+    transform: translateY(10px) scale(0.5);
+  }
+}
+@media screen and (max-width: 546px) {
+  .swiper-button-prev:hover::after,
+  .swiper-button-next:hover::after {
+    transform: translateY(-10px) scale(0.3);
+  }
 }
 
 .advertisement {

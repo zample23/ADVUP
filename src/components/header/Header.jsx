@@ -1,20 +1,24 @@
-import "./header.scss";
-import logo from "./../../img/logo_black.svg";
+import { useState } from "react";
+import logoBlack from "./../../img/logo_black.svg";
 import logoPink from "./../../img/logo_pink.svg";
+import "./header.scss";
 
 const Header = () => {
+  const [burgerMenu, setBurgerMenu] = useState(false);
+
   return (
     <header className="header ">
       <div className="container">
-        <div className="header__grid">
+        <div
+          className={
+            burgerMenu ? `header__grid header__grid-tablet` : "header__grid"
+          }
+        >
           <div className="header__logo">
             <a href="#!">
-              <img className="header__logo-pink" src={logoPink} alt="ADVUP" />
-            </a>
-            <a href="#!">
               <img
-                className="header__logo-black hidden"
-                src={logo}
+                className="header__logo-pink"
+                src={burgerMenu ? logoBlack : logoPink}
                 alt="ADVUP"
               />
             </a>
@@ -45,12 +49,23 @@ const Header = () => {
             </ul>
           </nav>
 
-          <a className="header__button button" href="#form">
+          <a
+            className="header__button button"
+            href="#form"
+            onClick={() => setBurgerMenu(false)}
+          >
             Залишити заявку
           </a>
           <div className="header__media-btn">
-            <button className="nav-icon-btn">
-              <div className="nav-icon"></div>
+            <button
+              className="nav-icon-btn"
+              onClick={() => setBurgerMenu(!burgerMenu)}
+            >
+              <div
+                className={
+                  burgerMenu ? `nav-icon nav-icon--active` : `nav-icon`
+                }
+              ></div>
             </button>
           </div>
         </div>

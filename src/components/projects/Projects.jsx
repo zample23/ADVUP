@@ -100,8 +100,8 @@ const Projects = () => {
             >
               {projects.map((project) => {
                 return (
-                  <SwiperSlide>
-                    <Card project={project} key={project.id} />
+                  <SwiperSlide key={project.id}>
+                    <Card project={project} />
                   </SwiperSlide>
                 );
               })}

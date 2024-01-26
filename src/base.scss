@@ -60,7 +60,7 @@ body {
 .swiper-button-next::after {
   padding: 20px;
   z-index: 10;
-  color: $pink;
+  color: $grey;
   transition: color 0.1s ease-in, transform 0.1s ease-in;
 
   transform: translateY(50px) scale(0.6);
@@ -74,8 +74,14 @@ body {
 
 .swiper-button-prev:hover::after,
 .swiper-button-next:hover::after {
-  color: $grey;
+  color: $pink;
   transform: translateY(50px) scale(0.7);
+  @include mediaPhone {
+    transform: translateY(10px) scale(0.5);
+  }
+  @include mediaMini {
+    transform: translateY(-10px) scale(0.3);
+  }
 }
 
 // .advertisement-wrapper {
