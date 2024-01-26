@@ -1,5 +1,9 @@
 @import url("./fonts/ProximaNova/stylesheet.css");
 @import url("./fonts/PlayenSans/stylesheet.css");
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Proxima Nova";
   font-size: 16px;
