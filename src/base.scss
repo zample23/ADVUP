@@ -57,6 +57,7 @@ body {
 
 .swiper-button-prev::after,
 .swiper-button-next::after {
+  z-index: 10;
   color: $pink;
   transform: translateY(50px) scale(0.6);
   @include mediaPhone {
