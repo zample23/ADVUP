@@ -56,29 +56,67 @@
   &:hover {
     transform: scale(1.05);
   }
-  &:hover::before {
-    content: "";
-    display: block;
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    left: 50%;
-    top: -20px;
-    background-color: $black;
-    transform-origin: top left;
-    transform: rotate(45deg);
-  }
+  // &:hover::before {
+  //   content: "";
+  //   display: block;
+  //   width: 30px;
+  //   height: 30px;
+  //   position: absolute;
+  //   left: 50%;
+  //   top: -20px;
+  //   background-color: $black;
+  //   transform-origin: top left;
+  //   transform: rotate(45deg);
+  // }
 
-  &:hover::after {
-    content: "";
-    display: block;
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    left: 50%;
-    top: -8px;
-    background: url("./../../img/trinagle_pink.svg") no-repeat;
-    transform-origin: left;
-    transform: translateX(-19px);
-  }
+  // &:hover::after {
+  //   content: "";
+  //   display: block;
+  //   width: 100px;
+  //   height: 100px;
+  //   position: absolute;
+  //   left: 50%;
+  //   top: -8px;
+  //   background: url("./../../img/trinagle_pink.svg") no-repeat;
+  //   transform-origin: left;
+  //   transform: translateX(-19px);
+  // }
+}
+
+.project-card::before {
+  content: "";
+  display: block;
+  opacity: 0;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: 50%;
+  top: -20px;
+  background-color: $black;
+  transform-origin: top left;
+  transform: rotate(45deg);
+  transition: opacity 0.2s ease-in;
+}
+
+.project-card::after {
+  content: "";
+  display: block;
+  opacity: 0;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  top: -8px;
+  background: url("./../../img/trinagle_pink.svg") no-repeat;
+  transform-origin: left;
+  transform: translateX(-19px);
+  transition: opacity 0.2s ease-in;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-card:hover::after {
+  opacity: 1;
 }

@@ -54,9 +54,11 @@
 .project-card:hover {
   transform: scale(1.05);
 }
-.project-card:hover::before {
+
+.project-card::before {
   content: "";
   display: block;
+  opacity: 0;
   width: 30px;
   height: 30px;
   position: absolute;
@@ -65,10 +67,13 @@
   background-color: #000000;
   transform-origin: top left;
   transform: rotate(45deg);
+  transition: opacity 0.2s ease-in;
 }
-.project-card:hover::after {
+
+.project-card::after {
   content: "";
   display: block;
+  opacity: 0;
   width: 100px;
   height: 100px;
   position: absolute;
@@ -77,4 +82,13 @@
   background: url("./../../img/trinagle_pink.svg") no-repeat;
   transform-origin: left;
   transform: translateX(-19px);
+  transition: opacity 0.2s ease-in;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-card:hover::after {
+  opacity: 1;
 }
