@@ -1,6 +1,20 @@
+import { useState } from "react";
 import "./form.scss";
 
 const Form = () => {
+  const [formData, setFormData] = useState({
+    activity: "",
+    name: "",
+    mail: "",
+    phone: "",
+    comment: "",
+  });
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(formData);
+  };
+
   return (
     <section className="form-section">
       <div className="container-small">
@@ -26,14 +40,22 @@ const Form = () => {
                 type="radio"
                 name="profession"
                 id="bloger"
-                value="Блогер"
+                value="bloger"
+                onChange={(event) =>
+                  setFormData({ ...formData, activity: event.target.value })
+                }
+                checked={formData.activity === "bloger"}
               />
               <label htmlFor="bloger">Блогер</label>
               <input
                 type="radio"
                 name="profession"
                 id="advertiser"
-                value="Рекламодавець"
+                value="advertiser"
+                onChange={(event) =>
+                  setFormData({ ...formData, activity: event.target.value })
+                }
+                checked={formData.activity === "advertiser"}
               />
               <label htmlFor="advertiser">Рекламодавець</label>
             </div>
@@ -48,6 +70,10 @@ const Form = () => {
               id="name"
               name="name"
               placeholder="Введіть ваше ім'я"
+              value={formData.name}
+              onChange={(event) =>
+                setFormData({ ...formData, name: event.target.value })
+              }
             />
           </div>
 
@@ -60,6 +86,10 @@ const Form = () => {
               id="mail"
               name="mail"
               placeholder="Введіть електронну пошту"
+              value={formData.mail}
+              onChange={(event) =>
+                setFormData({ ...formData, mail: event.target.value })
+              }
             />
           </div>
 
@@ -72,6 +102,10 @@ const Form = () => {
               id="tel"
               name="tel"
               placeholder="Введіть ваш номер телефону"
+              value={formData.phone}
+              onChange={(event) =>
+                setFormData({ ...formData, phone: event.target.value })
+              }
             />
           </div>
 
@@ -83,11 +117,19 @@ const Form = () => {
               name="comments"
               id="comments"
               placeholder="Залиште свій коментар"
+              value={formData.comment}
+              onChange={(event) =>
+                setFormData({ ...formData, comment: event.target.value })
+              }
             ></textarea>
           </div>
 
           <div className="form__ending">
-            <button className="form__button button" type="submit">
+            <button
+              className="form__button button"
+              type="submit"
+              onClick={handleSubmit}
+            >
               Відправити
             </button>
 
