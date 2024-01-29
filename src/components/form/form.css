@@ -186,9 +186,21 @@
   color: #ffffff;
   font-size: 14px;
   text-decoration-line: underline;
+  transition: all 0.2s ease-in;
 }
 @media screen and (max-width: 767px) {
   .form__consent a {
     font-size: 12px;
   }
+}
+.form__consent a:hover {
+  color: #ff3f62;
+}
+.form__consent a:active {
+  text-decoration-line: none;
+}
+
+.error {
+  color: #ff3f62;
+  padding-top: 5px;
 }

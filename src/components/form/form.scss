@@ -170,9 +170,22 @@
       color: $white;
       font-size: 14px;
       text-decoration-line: underline;
+      transition: all 0.2s ease-in;
+
       @include mediaPhone {
         font-size: 12px;
       }
+      &:hover {
+        color: $pink;
+      }
+      &:active {
+        text-decoration-line: none;
+      }
     }
   }
+}
+
+.error {
+  color: $pink;
+  padding-top: 5px;
 }

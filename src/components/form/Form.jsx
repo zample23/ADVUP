@@ -1,18 +1,38 @@
 import { useState } from "react";
+import validation from "./validation";
 import "./form.scss";
 
 const Form = () => {
   const [formData, setFormData] = useState({
     activity: "",
     name: "",
-    mail: "",
+    email: "",
     phone: "",
     comment: "",
   });
 
-  const handleSubmit = (event) => {
+  const [errors, setErrors] = useState({});
+
+  const handleInput = (event) => {
+    setFormData({ ...formData, [event.target.name]: event.target.value });
+  };
+
+  const handleValidation = (event) => {
     event.preventDefault();
-    console.log(formData);
+
+    const validationErrors = validation(formData);
+
+    if (Object.keys(validationErrors).length === 0) {
+      setFormData({
+        activity: "",
+        name: "",
+        email: "",
+        phone: "",
+        comment: "",
+      });
+    }
+
+    setErrors(validationErrors);
   };
 
   return (
@@ -32,33 +52,31 @@ const Form = () => {
           className="form"
           method="post"
           encType="multipart/form-data"
+          onSubmit={handleValidation}
         >
           <div className="form__profession-box">
             <div className="form__label">Діяльність</div>
             <div className="form__profession">
               <input
                 type="radio"
-                name="profession"
+                name="activity"
                 id="bloger"
                 value="bloger"
-                onChange={(event) =>
-                  setFormData({ ...formData, activity: event.target.value })
-                }
+                onChange={handleInput}
                 checked={formData.activity === "bloger"}
               />
               <label htmlFor="bloger">Блогер</label>
               <input
                 type="radio"
-                name="profession"
+                name="activity"
                 id="advertiser"
                 value="advertiser"
-                onChange={(event) =>
-                  setFormData({ ...formData, activity: event.target.value })
-                }
+                onChange={handleInput}
                 checked={formData.activity === "advertiser"}
               />
               <label htmlFor="advertiser">Рекламодавець</label>
             </div>
+            {errors.activity && <p className="error">{errors.activity}</p>}
           </div>
 
           <div className="form__input-box">
@@ -71,65 +89,56 @@ const Form = () => {
               name="name"
               placeholder="Введіть ваше ім'я"
               value={formData.name}
-              onChange={(event) =>
-                setFormData({ ...formData, name: event.target.value })
-              }
+              onChange={handleInput}
             />
+            {errors.name && <p className="error">{errors.name}</p>}
           </div>
 
           <div className="form__input-box">
-            <label className="form__label" htmlFor="mail">
+            <label className="form__label" htmlFor="email">
               Пошта
             </label>
             <input
-              type="email"
-              id="mail"
-              name="mail"
+              type="text"
+              id="email"
+              name="email"
               placeholder="Введіть електронну пошту"
-              value={formData.mail}
-              onChange={(event) =>
-                setFormData({ ...formData, mail: event.target.value })
-              }
+              value={formData.email}
+              onChange={handleInput}
             />
+            {errors.email && <p className="error">{errors.email}</p>}
           </div>
 
           <div className="form__input-box">
-            <label className="form__label" htmlFor="tel">
+            <label className="form__label" htmlFor="phone">
               Телефон
             </label>
             <input
               type="tel"
-              id="tel"
-              name="tel"
+              id="phone"
+              name="phone"
               placeholder="Введіть ваш номер телефону"
               value={formData.phone}
-              onChange={(event) =>
-                setFormData({ ...formData, phone: event.target.value })
-              }
+              onChange={handleInput}
             />
+            {errors.phone && <p className="error">{errors.phone}</p>}
           </div>
 
           <div className="form__comments">
-            <label className="form__label" htmlFor="comments">
-              Коментарі
+            <label className="form__label" htmlFor="comment">
+              Коментар (необов'язковий)
             </label>
             <textarea
-              name="comments"
-              id="comments"
+              name="comment"
+              id="comment"
               placeholder="Залиште свій коментар"
               value={formData.comment}
-              onChange={(event) =>
-                setFormData({ ...formData, comment: event.target.value })
-              }
+              onChange={handleInput}
             ></textarea>
           </div>
 
           <div className="form__ending">
-            <button
-              className="form__button button"
-              type="submit"
-              onClick={handleSubmit}
-            >
+            <button className="form__button button" type="submit">
               Відправити
             </button>
 

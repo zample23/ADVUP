@@ -65,7 +65,7 @@ const Footer = () => {
 
         <div className="footer__lower">
           <div className="footer__copyright">
-            © 2023 ADVUP. All rights reserved.
+            © 2024 ADVUP. All rights reserved.
           </div>
           <ul className="footer__socials">
             <li className="footer__social">
