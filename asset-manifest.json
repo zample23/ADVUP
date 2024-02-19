@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ADVUP/static/css/main.f13c36f6.css",
-    "main.js": "/ADVUP/static/js/main.ba9501c4.js",
+    "main.css": "/ADVUP/static/css/main.d516e78c.css",
+    "main.js": "/ADVUP/static/js/main.057028f3.js",
     "static/media/projects_main_image_4.png": "/ADVUP/static/media/projects_main_image_4.08839ade24a3416585e0.png",
     "static/media/project_1.png": "/ADVUP/static/media/project_1.6c38edca1ee785048a95.png",
     "static/media/project_4.png": "/ADVUP/static/media/project_4.6f6348af37a72201575d.png",
@@ -100,11 +100,11 @@
     "static/media/trinagle_pink.svg": "/ADVUP/static/media/trinagle_pink.d4a5a3153155b39203f8.svg",
     "static/media/trinagle_black.svg": "/ADVUP/static/media/trinagle_black.a9dbe885a5d198b48db2.svg",
     "static/media/rectangle.svg": "/ADVUP/static/media/rectangle.f75c025ee8d4d39a1d35.svg",
-    "main.f13c36f6.css.map": "/ADVUP/static/css/main.f13c36f6.css.map",
-    "main.ba9501c4.js.map": "/ADVUP/static/js/main.ba9501c4.js.map"
+    "main.d516e78c.css.map": "/ADVUP/static/css/main.d516e78c.css.map",
+    "main.057028f3.js.map": "/ADVUP/static/js/main.057028f3.js.map"
   },
   "entrypoints": [
-    "static/css/main.f13c36f6.css",
-    "static/js/main.ba9501c4.js"
+    "static/css/main.d516e78c.css",
+    "static/js/main.057028f3.js"
   ]
 }
