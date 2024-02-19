@@ -1,25 +1,25 @@
-import { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+import { useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 
 // import "swiper/swiper-bundle.css";
 
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/navigation";
-import "swiper/css/thumbs";
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/navigation';
+import 'swiper/css/thumbs';
 
-import projects from "../../data/projects-info";
-import Card from "../card/Card";
-import Button from "../button/Button";
-import "./projects.scss";
+import projects from '../../data/projects-info';
+import Card from '../card/Card';
+import Button from '../button/Button';
+import './projects.scss';
 
-import iconFire from "./../../img/icon_fire.png";
+import iconFire from './../../img/icon_fire.png';
 
 const Projects = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   return (
-    <section className="projects">
+    <section className="projects" id="anchorprojects">
       <div className="container">
         <h2 className="projects__title" id="main">
           Наші кейси
@@ -46,7 +46,7 @@ const Projects = () => {
                         {project.tags.map((tag) => {
                           return (
                             <li className="project-main__tag" key={tag.id}>
-                              {tag.tag === "icon_fire.png" ? (
+                              {tag.tag === 'icon_fire.png' ? (
                                 <img src={iconFire} alt="Fire" />
                               ) : (
                                 tag.tag

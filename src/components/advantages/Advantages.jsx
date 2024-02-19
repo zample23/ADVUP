@@ -1,8 +1,8 @@
-import "./advantages.scss";
+import './advantages.scss';
 
 const Advantages = () => {
   return (
-    <div className="advantages">
+    <div className="advantages" id="anchoradvantages">
       <div className="container">
         <h2 className="advantages__title">Наші переваги</h2>
         <div className="advantages__grid">

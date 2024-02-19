@@ -1,14 +1,14 @@
-import { useState } from "react";
-import validation from "./validation";
-import "./form.scss";
+import { useState } from 'react';
+import validation from './validation';
+import './form.scss';
 
 const Form = () => {
   const [formData, setFormData] = useState({
-    activity: "",
-    name: "",
-    email: "",
-    phone: "",
-    comment: "",
+    activity: '',
+    name: '',
+    email: '',
+    phone: '',
+    comment: '',
   });
 
   const [errors, setErrors] = useState({});
@@ -24,11 +24,11 @@ const Form = () => {
 
     if (Object.keys(validationErrors).length === 0) {
       setFormData({
-        activity: "",
-        name: "",
-        email: "",
-        phone: "",
-        comment: "",
+        activity: '',
+        name: '',
+        email: '',
+        phone: '',
+        comment: '',
       });
     }
 
@@ -36,7 +36,7 @@ const Form = () => {
   };
 
   return (
-    <section className="form-section">
+    <section className="form-section" id="anchorform">
       <div className="container-small">
         <h2 className="form-section__title" id="form">
           Залишити заявку
@@ -63,7 +63,7 @@ const Form = () => {
                 id="bloger"
                 value="bloger"
                 onChange={handleInput}
-                checked={formData.activity === "bloger"}
+                checked={formData.activity === 'bloger'}
               />
               <label htmlFor="bloger">Блогер</label>
               <input
@@ -72,7 +72,7 @@ const Form = () => {
                 id="advertiser"
                 value="advertiser"
                 onChange={handleInput}
-                checked={formData.activity === "advertiser"}
+                checked={formData.activity === 'advertiser'}
               />
               <label htmlFor="advertiser">Рекламодавець</label>
             </div>
@@ -143,7 +143,7 @@ const Form = () => {
             </button>
 
             <div className="form__consent">
-              Натиснувши кнопку, ви погоджуєтесь на{" "}
+              Натиснувши кнопку, ви погоджуєтесь на{' '}
               <a href="#!">обробку персональних даних</a>
             </div>
           </div>

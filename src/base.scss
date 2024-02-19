@@ -1,6 +1,6 @@
-@import url("./fonts/ProximaNova/stylesheet.css");
-@import url("./fonts/PlayenSans/stylesheet.css");
-@import "./vars.scss";
+@import url('./fonts/ProximaNova/stylesheet.css');
+@import url('./fonts/PlayenSans/stylesheet.css');
+@import './vars.scss';
 
 html {
   scroll-behavior: smooth;
@@ -15,7 +15,7 @@ body {
 }
 
 .no-scroll {
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .container {
@@ -160,7 +160,7 @@ body {
 
 .nav-icon::before,
 .nav-icon::after {
-  content: "";
+  content: '';
   display: block;
 
   position: absolute;

@@ -1,19 +1,19 @@
-import "./footer.scss";
-import logoBlack from "./../../img/logo_black.svg";
-import iconTwitter from "./../../img/socials/socials_twitter.svg";
-import iconTelegram from "./../../img/socials/socials_telegram.svg";
-import iconFacebook from "./../../img/socials/socials_facebook.svg";
-import iconTwitch from "./../../img/socials/socials_twitch.svg";
-import iconInstagram from "./../../img/socials/socials_instagram.svg";
+import './footer.scss';
+import logoBlack from './../../img/logo_black.svg';
+import iconTwitter from './../../img/socials/socials_twitter.svg';
+import iconTelegram from './../../img/socials/socials_telegram.svg';
+import iconFacebook from './../../img/socials/socials_facebook.svg';
+import iconTwitch from './../../img/socials/socials_twitch.svg';
+import iconInstagram from './../../img/socials/socials_instagram.svg';
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer" id="anchorcontacts">
       <div className="container">
         <div className="footer__top">
           <div className="footer__left-column">
             <div className="footer__logo">
-              <a href="#!">
+              <a href="#anchormain">
                 <img src={logoBlack} alt="Logo" />
               </a>
             </div>
@@ -35,27 +35,27 @@ const Footer = () => {
           <nav className="footer__nav">
             <ul>
               <li className="footer__nav-item">
-                <a href="#!" className="footer__nav-link">
+                <a href="#anchorform" className="footer__nav-link">
                   Блогерам
                 </a>
               </li>
               <li className="footer__nav-item">
-                <a href="#!" className="footer__nav-link">
+                <a href="#anchoradvantages" className="footer__nav-link">
                   Рекламодавцям
                 </a>
               </li>
               <li className="footer__nav-item">
-                <a href="#!" className="footer__nav-link">
+                <a href="#anchorfooter" className="footer__nav-link">
                   Угода користувача
                 </a>
               </li>
               <li className="footer__nav-item">
-                <a href="#!" className="footer__nav-link">
+                <a href="#anchorprojects" className="footer__nav-link">
                   Наші кейси
                 </a>
               </li>
               <li className="footer__nav-item">
-                <a href="#!" className="footer__nav-link">
+                <a href="#anchorfooter" className="footer__nav-link">
                   Допомога
                 </a>
               </li>
